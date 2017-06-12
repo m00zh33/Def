@@ -19,7 +19,7 @@ It begins checking the actual driver!
 You should be able to delete the real driver, if you time the switch right before it tries to delete our fake file with eicar string.
 The problem with switching too early is that it will read the real driver, and since its obviously not a virus, it won't try to delete it.
 
-Normally you would use an OPLOCK to get the timing right, but since defender already places an OPLOCK on our file, we can't use that for timing. You need to figure out something else!
+Normally you would use an OPLOCK to get the timing right, but since defender already places an OPLOCK on our file, we can't use that for timing. You need to figure out something else! (Just a tip, don't try to hit this window by just changing the Sleep() time, its to small and varies to much for this. You need something else :) )
 
 Example output in procmon:
 
