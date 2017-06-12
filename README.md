@@ -43,3 +43,5 @@ Example output in procmon:
 You can clearly see the switch to our real driver :) (I had already deleted 3ware.sys with another PoC, which is why it says not found, can't be bothered to set-up a clean vm!)
 
 ps: If anyone did read my blogpost yesterday, my memory is pretty bad, I made a wrong assumption in there, defender does not open junctions if you have a program write into a junction. My bad! But this also works ;).
+
+pps: Its all just fairly theoretical. Its might not even work. But at the very least it will give you an idea on how to find similar bugs! Junctions used to be popular to bypass sandboxes, but it can also be a powerful tool for local privilege escalation!
