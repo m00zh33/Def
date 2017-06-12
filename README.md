@@ -5,7 +5,7 @@ NOTE: THIS POC IS INCOMPLETE, THERE IS STILL A TIMING ISSUE TO BE FIXED
 The purpose of this PoC is to gain arbitrary deletion rights as system (basically make windows defender delete whatever we want).
 This would work from a guest account (meaning you could delete drivers on school/library computers! :D).
 
-Furthermore, deleting arbitrary dlls can lead to hijacking issues, or files in windows\temp and programdata, which can then be recreated by the user the potentially hijack control flow of critical programs.
+Furthermore, deleting arbitrary dlls can lead to hijacking issues, or files in windows\temp and programdata, which can then be recreated by the user to potentially hijack control flow of critical programs.
 
 
 Current steps in the PoC:
