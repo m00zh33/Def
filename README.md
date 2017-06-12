@@ -1,4 +1,6 @@
-(This works from a guest ACC, if you just want to gain arbitrary delete to bypass UAC, there are much easier ways!)
+(This potentially works from a guest ACC, if you just want to gain arbitrary delete to bypass UAC, there are much easier ways!)
+
+NOTE: THIS POC IS INCOMPLETE, THERE IS STILL A TIMING ISSUE TO BE FIXED
 
 The purpose of this PoC is to gain arbitrary deletion rights as system (basically make windows defender delete whatever we want).
 This would work from a guest account (meaning you could delete drivers on school/library computers! :D).
@@ -16,6 +18,8 @@ It begins checking the actual driver!
 
 You should be able to delete the real driver, if you time the switch right before it tries to delete our fake file with eicar string.
 The problem with switching too early is that it will read the real driver, and since its obviously not a virus, it won't try to delete it.
+
+Normally you would use an OPLOCK to get the timing right, but since defender already places an OPLOCK on our file, we can't use that for timing. You need to figure out something else!
 
 Example output in procmon:
 
