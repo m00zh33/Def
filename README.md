@@ -1,3 +1,5 @@
+(This works from a guest ACC, if you just want to gain arbitrary delete to bypass UAC, there are much easier ways!)
+
 The purpose of this PoC is to gain arbitrary deletion rights as system (basically make windows defender delete whatever we want).
 This would work from a guest account (meaning you could delete drivers on school/library computers! :D).
 
