@@ -14,7 +14,7 @@ Current steps in the PoC:
 2. Wait 5 seconds (obviously this part is what needs to be changed), delete our fake 3ware.sys file, and turn our folder into a junction to c:\windows\system32\drivers
 
 In procmon (filter on 3ware.sys), you can clearly see that defender is unaware that the file has been deleted and its folder turned into a junction.
-It begins checking the actual driver! (I actually only spent a few hours on this bug, I didn't reverse anything, and I'm making untested assumptions here. If the deletion of our fake file triggers a different routine we may just never reach that delete at the end. But there is alot of potential for abuse here, using junctions, OPLOCKS, changing file permissions, etc ..  you can trigger some weird edge cases if you are creative enough ;) 
+It begins checking the actual driver! (edit: I actually only spent a few hours on this bug, I didn't reverse anything, and I'm making untested assumptions here. If the deletion of our fake file triggers a different routine we may just never reach that delete at the end. But there is alot of potential for abuse here, using junctions, OPLOCKS, changing file permissions, etc ..  you can trigger some weird edge cases if you are creative enough ;) 
 
 You should be able to delete the real driver, if you time the switch right before it tries to delete our fake file with eicar string.
 The problem with switching too early is that it will read the real driver, and since its obviously not a virus, it won't try to delete it.
