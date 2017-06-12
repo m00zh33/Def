@@ -11,7 +11,7 @@ Furthermore, deleting arbitrary dlls can lead to hijacking issues, or files in w
 Current steps in the PoC:
 
 1. Create a file called 3ware.sys (driver we are targeting) in a folder called eicar on the desktop. The content of our file is an EICAR test string.
-2. Wait 5 seconds, delete our fake 3ware.sys file, and turn our folder into a junction to c:\windows\system32\drivers32
+2. Wait 5 seconds, delete our fake 3ware.sys file, and turn our folder into a junction to c:\windows\system32\drivers
 
 In procmon (filter on 3ware.sys), you can clearly see that defender is unaware that the file has been deleted and its folder turned into a junction.
 It begins checking the actual driver!
