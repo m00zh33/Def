@@ -41,3 +41,5 @@ Example output in procmon:
 ```
 
 You can clearly see the switch to our real driver :) (I had already deleted 3ware.sys with another PoC, which is why it says not found, can't be bothered to set-up a clean vm!)
+
+ps: If anyone did read my blogpost yesterday, my memory is pretty bad, I made a wrong assumption in there, defender does not open junctions if you have a program write into a junction. My bad!.
