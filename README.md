@@ -14,7 +14,7 @@ Current steps in the PoC:
 2. Wait 5 seconds (obviously this part is what needs to be changed), delete our fake 3ware.sys file, and turn our folder into a junction to c:\windows\system32\drivers
 
 In procmon (filter on 3ware.sys), you can clearly see that defender is unaware that the file has been deleted and its folder turned into a junction.
-It begins checking the actual driver!
+It begins checking the actual driver! (I actually only spent a few hours on this bug, I didn't reverse anything, and I'm making untested assumptions here. If the deletion of our fake file triggers a different routine we may just never reach that delete at the end. But there is alot of potential for abuse here, using junctions, OPLOCKS, changing file permissions, etc ..  you can trigger some weird edge cases if you are creative enough ;) 
 
 You should be able to delete the real driver, if you time the switch right before it tries to delete our fake file with eicar string.
 The problem with switching too early is that it will read the real driver, and since its obviously not a virus, it won't try to delete it.
@@ -42,6 +42,6 @@ Example output in procmon:
 
 You can clearly see the switch to our real driver :) (I had already deleted 3ware.sys with another PoC, which is why it says not found, can't be bothered to set-up a clean vm!)
 
-ps: If anyone did read my blogpost yesterday, my memory is pretty bad, I made a wrong assumption in there, defender does not open junctions if you have a program write into a junction. My bad! But this also works ;).
 
-pps: Its all just fairly theoretical. Its might not even work. But at the very least it will give you an idea on how to find similar bugs! Junctions used to be popular to bypass sandboxes, but it can also be a powerful tool for local privilege escalation!
+
+ps: Its all just fairly theoretical. Its might not even work. But at the very least it will give you an idea on how to find similar bugs! Junctions used to be popular to bypass sandboxes, but it can also be a powerful tool for local privilege escalation!
