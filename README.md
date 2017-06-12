@@ -1,4 +1,4 @@
-(This potentially works from a guest ACC, if you just want to gain arbitrary delete to bypass UAC, there are much easier ways!)
+(This potentially works from a guest account, if you just want to gain arbitrary delete to bypass UAC, there are much easier ways!)
 
 NOTE: THIS POC IS INCOMPLETE, THERE IS STILL A TIMING ISSUE TO BE FIXED
 
